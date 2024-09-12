@@ -76,9 +76,6 @@
     gap: 60px;
 }
 
-.footer__links ul li {
-    display: inline-block;
-}
 
 .footer__links ul li a {
     color: #929ECC;
@@ -97,7 +94,6 @@
 }
 
 .footer__social a {
-    display: inline-block;
     margin-right: 30px;
 }
 

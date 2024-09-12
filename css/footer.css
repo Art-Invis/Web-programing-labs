@@ -1,5 +1,5 @@
 .footer {
-    background-color: #f8f9fa;
+    background-color: #E7ECFF;
     padding: 20px 0;
     height: 282px;
     width: 100%;
@@ -21,26 +21,26 @@
 
 .footer__title {
     position: absolute;
-    top: 42px; /* Відстань від верхнього краю футера */
-    right: 165px; /* Відстань від правого краю футера */
+    top: 42px; 
+    right: 165px; 
     font-size: 26px;
     color: #37447E;
     font-weight: 900;
-    white-space: nowrap; /* Запобігає переносу тексту */
+    white-space: nowrap; 
 }
 
 .footer__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px; /* Збільшено відступ зверху для звільнення місця для заголовка і риски */
+    padding-top: 80px; 
 }
 
 .footer__line {
-    width: 100%; /* Використовує ширину футера */
-    max-width: 1110px; /* Максимальна ширина риски */
+    width: 100%; 
+    max-width: 1110px; 
     border: 1px solid #CDD1D4;
-    margin-top: 25px; /* Відстань між рискою і кнопкою */
+    margin-top: 25px; 
 }
 
 .footer__button {
@@ -56,7 +56,7 @@
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    margin-top: 22px; /* Відступ під кнопкою */
+    margin-top: 22px; 
 }
 
 .footer__button:hover {

@@ -5,7 +5,6 @@ body{
 }
 
 a{
-    text-decoration: none;
     color: #37447E;
 }
 
@@ -25,7 +24,7 @@ li{
     margin: 0 auto;
     max-width: 1110px;
     position: relative; 
-    overflow: hidden;
+    
 }
 
 .container1{
@@ -67,7 +66,7 @@ li{
     line-height: 18px;
 }
 
-.title1{
+.title{
     color: #091133;
     font-size: 36px;
     font-style: normal;

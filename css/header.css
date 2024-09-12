@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.header__title {
+    font-weight: 900;
+    font-size: 26px;
+}
+
+.header__right-side {
+    display: flex;
+    align-items: center; 
+}
+
+.header__nav {
+    margin-right: 30px; 
+}
+
+.header__nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav-item {
+    margin-right: 30px; 
+}
+
+.header__nav-item a {
+    color: #505F98;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 10px;
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.header__nav-item a:hover {
+    color: darkblue; 
+}
+
+.header__buttons {
+    display: flex;
+    gap: 26px; 
+}
+
+.header__buy-now {
+    background-color: #FFD166; 
+    color: #111B47; 
+    width: 104px;
+    height: 26px; 
+    border-radius: 2px; 
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    cursor: pointer; 
+    transition: background-color 0.2s ease; 
+    text-align: center;
+    line-height: 18px;
+    border: none;
+}
+
+.header__buy-now:hover {
+    background-color: #FFBF00; 
+}
+
+.header__learn-more {
+    background-color: #111B47; 
+    color: white; 
+    width: 104px;
+    height: 26px; 
+    border-radius: 2px; 
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    cursor: pointer; 
+    transition: background-color 0.2s ease; 
+    text-align: center;
+    line-height: 18px;
+    border: none;
+}
+
+.header__learn-more:hover {
+    background-color: #0056b3;
+}
+
+
+

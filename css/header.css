@@ -45,23 +45,26 @@
 
 .header__buttons {
     display: flex;
+    align-items: center;
     gap: 26px; 
+    /* Прибираємо padding: auto */
 }
 
 .header__buy-now {
+    display: flex; /* Замість display: center */
+    justify-content: center; /* Центрування тексту по горизонталі */
+    align-items: center; /* Центрування тексту по вертикалі */
     background-color: #FFD166; 
     color: #111B47; 
     width: 104px;
-    height: 26px; 
+    height: 26px; /* Можливо збільшення висоти для кращого вирівнювання */
     border-radius: 2px; 
     font-size: 12px;
     font-weight: 600;
-    line-height: 18px;
     cursor: pointer; 
     transition: background-color 0.2s ease; 
-    text-align: center;
-    line-height: 18px;
     border: none;
+    text-decoration: none; /* Прибираємо підкреслення */
 }
 
 .header__buy-now:hover {
@@ -69,19 +72,20 @@
 }
 
 .header__learn-more {
+    display: flex; /* Додаємо для центрування */
+    justify-content: center;
+    align-items: center;
     background-color: #111B47; 
     color: white; 
     width: 104px;
-    height: 26px; 
+    height: 26px; /* Висота для кращого центрування */
     border-radius: 2px; 
     font-size: 12px;
     font-weight: 600;
-    line-height: 18px;
     cursor: pointer; 
     transition: background-color 0.2s ease; 
-    text-align: center;
-    line-height: 18px;
     border: none;
+    text-decoration: none; /* Прибираємо підкреслення */
 }
 
 .header__learn-more:hover {

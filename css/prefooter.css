@@ -33,7 +33,6 @@
     font-weight: 500;
     line-height: 32px;
     margin-top: 16px;
-    margin-bottom: 8px;
 }
 
 .info__text{
@@ -43,22 +42,24 @@
     line-height: 24px;
 }
 
-.info__button {
-    background-color: #111B47; 
-    width: 189px;
-    height: 26px;
-    color: white; 
-    border: none; 
-    font-size: 12px; 
-    font-weight: 500; 
-    border-radius: 2px; 
-    cursor: pointer; 
-    transition: background-color 0.2s ease; 
-    text-align: center;
-    line-height: 18px;
-    margin-top: 20px;
-}
 
+.info__button {
+    display: flex; /* Додаємо для центрування */
+    justify-content: center;
+    align-items: center;
+    background-color: #111B47; 
+    color: white; 
+    width: 189px;
+    height: 26px; /* Висота для кращого центрування */
+    border-radius: 2px; 
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer; 
+    margin-top: 30px;
+    transition: background-color 0.2s ease; 
+    border: none;
+    text-decoration: none; /* Прибираємо підкреслення */
+}
 .info__button:hover {
     background-color: #0056b3; 
 }

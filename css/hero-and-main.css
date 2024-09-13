@@ -59,12 +59,12 @@
 
 .tablet-image-container1 {
     position: absolute;
-    top: 28%; 
-    left: 650px; 
-    width: 1092px; 
+    top: 29%; 
+    left: 56%; 
+    width: 645px; 
     height: 562px; 
     overflow: hidden; 
-    z-index: -1; 
+    z-index: 0; 
 }
 
 .tablet-image-container2{

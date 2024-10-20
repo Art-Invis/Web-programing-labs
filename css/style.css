@@ -1,0 +1,17 @@
+@import "./normalize.min.css";
+
+@import "./global.css";
+
+@import "./header.css";
+
+@import "./hero.css";
+
+@import "./main.css";
+
+@import "./prefooter.css";
+
+@import "./footer.css";
+
+@import "./nav.css";
+
+@import "./burger.js"

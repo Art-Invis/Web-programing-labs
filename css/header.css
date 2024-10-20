@@ -1,96 +1,87 @@
-.header {
+
+.headers {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center; 
+    
+    align-items: center;
 }
 
-.header__title {
+.header_right-side {
+    display: flex;
+    align-items: center;
+}
+
+.header_nav ul {
+    display: flex;
+}
+
+.header_nav_item {
+    margin-right: 60px;
+}
+
+.header_title {
+    margin-right: 60px;
+    color: #37447E;
     font-weight: 900;
     font-size: 26px;
 }
 
-.header__right-side {
+.header_buttons {
     display: flex;
-    align-items: center; 
+    gap: 26px;
+    align-self: center;
+    
 }
 
-.header__nav {
-    margin-right: 30px; 
-}
-
-.header__nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.header__nav-item {
-    margin-right: 30px; 
-}
-
-.header__nav-item a {
-    color: #505F98;
+.header_learn-more {
+    color: #FFFFFF;
+    background: #111B47;
+    font-weight: 500;
     font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
-    padding: 10px;
-    text-decoration: none; 
-    cursor: pointer;
+    padding: 10px 30px;
 }
 
-.header__nav-item a:hover {
-    color: darkblue; 
+.header_buy-now {
+    color: #111B47;
+    padding: 10px 30px;
+    background: #FFD166;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.header__buttons {
-    display: flex;
-    align-items: center;
-    gap: 26px; 
-    /* Прибираємо padding: auto */
+/* Адаптивні стилі для мобільних пристроїв */
+
+
+/* Стилі для великих екранів */
+@media screen and (min-width: 769px) and (max-width: 1280px) { 
+    .headers{
+        width: 75%;
+        padding: 0 1px;
+    }
+    
+    
+
 }
 
-.header__buy-now {
-    display: flex; /* Замість display: center */
-    justify-content: center; /* Центрування тексту по горизонталі */
-    align-items: center; /* Центрування тексту по вертикалі */
-    background-color: #FFD166; 
-    color: #111B47; 
-    width: 104px;
-    height: 26px; /* Можливо збільшення висоти для кращого вирівнювання */
-    border-radius: 2px; 
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer; 
-    transition: background-color 0.2s ease; 
-    border: none;
-    text-decoration: none; /* Прибираємо підкреслення */
+/* Основні стилі для анімацій кнопок */
+.header_learn-more, .header_buy-now {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 2px;
 }
 
-.header__buy-now:hover {
-    background-color: #FFBF00; 
+.header_learn-more:hover {
+    background-color: #3A4B8F;
+    transform: scale(1.15);
 }
 
-.header__learn-more {
-    display: flex; /* Додаємо для центрування */
-    justify-content: center;
-    align-items: center;
-    background-color: #111B47; 
-    color: white; 
-    width: 104px;
-    height: 26px; /* Висота для кращого центрування */
-    border-radius: 2px; 
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer; 
-    transition: background-color 0.2s ease; 
-    border: none;
-    text-decoration: none; /* Прибираємо підкреслення */
+.header_buy-now:hover {
+    background-color: #FFC53B;
+    transform: scale(1.15);
 }
 
-.header__learn-more:hover {
-    background-color: #0056b3;
+/* Додатковий ефект для натискання */
+.header_learn-more:active, .header_buy-now:active {
+    transform: scale(0.95);
 }
-
-
 

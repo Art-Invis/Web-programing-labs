@@ -1,0 +1,112 @@
+/* Edit Track Page Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Темний фон для контрасту */
+    color: #e0e0e0; /* Світлий текст для кращої читабельності */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #1e1e1e, #4CAF50); /* Градієнт для хедера */
+    color: white;
+    border-bottom: 2px solid #4CAF50; /* Зелена нижня межа */
+}
+
+header nav a {
+    text-decoration: none;
+    color: aliceblue;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #76FF03; /* Світліший зелений при наведенні */
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Використати всю доступну висоту */
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    background: linear-gradient(45deg, #282828, #3b3b3b); /* Темний градієнт для форми */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 30%;
+}
+
+form label {
+    margin-bottom: 10px;
+    display: block; /* Стакація лейблів над інпутами */
+    font-weight: bold;
+    color: #dff5db; /* Яскраво-зелений для лейблів */
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="number"] {
+    width: 95%; /* Повна ширина інпутів */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4CAF50; /* Зелений бордер */
+    background: linear-gradient(45deg, #1c1c1c, #333);
+    color: white;
+    margin-bottom: 15px;
+}
+
+form input[type="text"]:focus,
+form input[type="url"]:focus,
+form input[type="number"]:focus {
+    outline: none;
+    border-color: #76FF03; /* Світліший зелений при фокусі */
+}
+
+/* Buttons */
+form button {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50; /* Зелений колір для кнопки */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Повна ширина для кнопок */
+    margin-bottom: 10px;
+}
+
+form button:hover {
+    background-color: #388E3C; /* Темніший зелений при наведенні */
+}
+
+/* Delete Button */
+form button.btn-delete {
+    background-color: #e53935; /* Червона кнопка для видалення */
+}
+
+form button.btn-delete:hover {
+    background-color: #b71c1c; /* Темніший червоний при наведенні */
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(45deg, #1c1c1c, #333);
+    padding: 20px 0;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    border-top: 2px solid #4CAF50;
+}

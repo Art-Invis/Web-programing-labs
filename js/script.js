@@ -1,21 +1,39 @@
-const songs = [
-    { title: "Ride", author: "Twenty One Pilots", listens: 650, duration: "3:45", image: "images/Ride.jpg", audio: "audio/Ride.mp3" },
-    { title: "Runaway", author: "Onerepublic", listens: 300, duration: "2:25", image: "images/Runaway.jpg", audio: "audio/Runaway.mp3" },
-    { title: "Paradise", author: "Coldplay", listens: 800, duration: "4:25", image: "images/Paradise.jpg", audio: "audio/cold_play_paradise.mp3" },
-    { title: "Прогноз погоди", author: "Скрябін", listens: 600, duration: "3:17", image: "images/prognoz.jpg", audio: "audio/prognoz.mp3" },
-    { title: "Whatever it takes", author: "Imagine Dragons", listens: 400, duration: "3:40", image: "images/Whatever.jpg", audio: "audio/whatever_it_takes.mp3" },
-    { title: "TDME", author: "Антитіла", listens: 700, duration: "3:30", image: "images/TDME.jpg", audio: "audio/tdme.mp3" },
-    { title: "Небо", author: "SadSvit", listens: 250, duration: "4:01", image: "images/Nebo.jpg", audio: "audio/nebo.mp3" }
-];
+// const songs = [
+//     // { title: "Ride", author: "Twenty One Pilots", listens: 650, duration: "3:45", image: "images/Ride.jpg", audio: "audio/Ride.mp3" },
+//     // { title: "Runaway", author: "Onerepublic", listens: 300, duration: "2:25", image: "images/Runaway.jpg", audio: "audio/Runaway.mp3" },
+//     // { title: "Paradise", author: "Coldplay", listens: 800, duration: "4:25", image: "images/Paradise.jpg", audio: "audio/cold_play_paradise.mp3" },
+//     // { title: "Прогноз погоди", author: "Скрябін", listens: 600, duration: "3:17", image: "images/prognoz.jpg", audio: "audio/prognoz.mp3" },
+//     // { title: "Whatever it takes", author: "Imagine Dragons", listens: 400, duration: "3:40", image: "images/Whatever.jpg", audio: "audio/whatever_it_takes.mp3" },
+//     // { title: "TDME", author: "Антитіла", listens: 700, duration: "3:30", image: "images/TDME.jpg", audio: "audio/tdme.mp3" },
+//     // { title: "Небо", author: "SadSvit", listens: 250, duration: "4:01", image: "images/Nebo.jpg", audio: "audio/nebo.mp3" }
+// ];
 
-function createMusicCard(song) {
+let songs = JSON.parse(localStorage.getItem("songs")) || [];
+        
+    
+function getImageForArtist(author) {
+    const images = {
+        "Twenty One Pilots": "images/twenty_one_pilots.jpg",
+        "Onerepublic": "images/onerepublic.jpg",
+        "Coldplay": "images/coldplay.jpg",
+        "Скрябін": "images/skryabin.jpg",
+        "Imagine Dragons": "images/imagine_dragons.jpg",
+        "Антитіла": "images/antytila.jpg",
+        "SadSvit": "images/sad_svit.jpg"
+    };
+    
+    // Return the image path if it exists, otherwise return a default image
+    return images[author] || "images/default.jpg";
+}
+
+function createMusicCard(song, index) {
     const card = document.createElement('div');
     card.classList.add('music-card');
     card.dataset.duration = song.duration;
     card.dataset.popularity = song.listens;
 
     card.innerHTML = `
-        <img src="${song.image}" alt="${song.title}" class="track-image">
+        <img src="${getImageForArtist(song.author)}" alt="${song.title}">
         <h3>${song.title}</h3>
         <p><strong>Author:</strong> ${song.author}</p>
         <p><strong>Listen count:</strong> ${song.listens}</p>
@@ -32,22 +50,58 @@ function createMusicCard(song) {
 
     card.querySelector('.play-btn').addEventListener('click', () => {
         if (isPlaying) {
-            
+            audio.pause();
             card.querySelector('.play-btn').innerHTML = '<i class="fa fa-play"></i>';
         } else {
-            
+            audio.play();
             card.querySelector('.play-btn').innerHTML = '<i class="fa fa-pause"></i>';
         }
         isPlaying = !isPlaying;
     });
 
+    // card.querySelector('.edit-btn').addEventListener('click', () => {
+    //     window.location.href = `edit.html?index=${index}`;
+    // });
+    card.querySelector('.edit-btn').addEventListener('click', () => {
+        localStorage.setItem('currentSong', JSON.stringify(songs[index]));
+        window.location.href = `edit.html`;
+    });
+    
+    // Додаємо подію для видалення
+    card.querySelector('.remove-btn').addEventListener('click', () => {
+        removeSong(index); // Викликати функцію видалення з індексом
+    });
+
     return card;
 }
 
+function removeSong(index) {
+    // Видаляємо пісню з масиву
+    songs.splice(index, 1);
+
+    // Оновлюємо localStorage
+    localStorage.setItem('songs', JSON.stringify(songs));
+
+    // Перевідображаємо оновлений список пісень
+    displaySongs();
+    calculateAverageListens();
+}
+
+// Функція для додавання всіх пісень на сторінку
 const addAllSongsToPage = () => {
-    const musicCards = songs.map(createMusicCard);
-    musicCards.forEach(card => musicCardsContainer.appendChild(card));
+    musicCardsContainer.innerHTML = ''; // Очищаємо контейнер перед додаванням нових карток
+    songs.forEach((song, index) => {
+        const card = createMusicCard(song, index); // Передаємо індекс для кожної пісні
+        musicCardsContainer.appendChild(card);
+    });
 };
+
+// Функція для відображення пісень на сторінці
+function displaySongs() {
+    addAllSongsToPage();
+}
+
+// Завантаження пісень з localStorage при завантаженні сторінки
 
 
 const convertDurationToMinutes = (duration) => {

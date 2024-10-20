@@ -1,0 +1,101 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Темний фон для контрасту */
+    color: #e0e0e0; /* Світлий текст для кращої читабельності */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #1e1e1e, #4CAF50); /* Градієнт для хедера */
+    color: white;
+    border-bottom: 2px solid #4CAF50; /* Зелена нижня межа */
+}
+
+header nav a {
+    text-decoration: none;
+    color: aliceblue;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #76FF03; /* Світліший зелений при наведенні */
+}
+
+/* Form Styles */
+main {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Use full available height */
+    padding: 20px;
+}
+
+form {
+    background: linear-gradient(45deg, #282828, #3b3b3b); /* Dark gradient for form */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 30%; /* Fixed width for form */
+}
+
+form label {
+    margin-bottom: 10px;
+    display: block; /* Stack labels on top of inputs */
+    font-weight: bold;
+    color: #dff5db; /* Bright green for labels */
+}
+
+form input[type="text"],
+form input[type="url"],
+form input[type="number"] {
+    width: 95%; /* Full width for inputs */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4CAF50; /* Green border */
+    background: linear-gradient(45deg, #1c1c1c, #333);
+    color: white;
+    margin-bottom: 15px;
+}
+
+form input[type="text"]:focus,
+form input[type="url"]:focus,
+form input[type="number"]:focus {
+    outline: none;
+    border-color: #76FF03; /* Lighter green on focus */
+}
+
+/* Submit Button */
+form button {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width for button */
+}
+
+form button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(45deg, #1c1c1c, #333);
+    padding: 20px 0;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    border-top: 2px solid #4CAF50;
+}

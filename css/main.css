@@ -1,0 +1,300 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Darker background for contrast */
+    color: #e0e0e0; /* Lighter text color for better readability */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка (header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #1e1e1e, #4CAF50); /* Gradient background */
+    color: white;
+    border-bottom: 2px solid #4CAF50; /* Green color */
+}
+
+/* Navigation Links */
+header nav a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: #ecf7eb; /* Green for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #388E3C; /* Darker green */
+}
+
+/* Input and Buttons */
+header input[type="text"], header button {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+header input[type="text"] {
+    background-color: #333;
+    color: white;
+    margin-right: 10px;
+}
+
+header button {
+    background-color: #004f07; /* Green color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #388E3C; /* Darker green */
+}
+
+/* Основна структура */
+.container {
+    display: flex;
+    flex: 1; /* Використовує всю доступну висоту */
+    margin: 20px;
+}
+
+/* Сайдбар */
+.sidebar {
+    text-align: center;
+    align-items: center;
+    gap: 15px; /* Збільшений проміжок між елементами */
+    width: 20%; 
+    padding: 20px;
+    background: linear-gradient(45deg, #1c1c1c, #333); /* Темний градієнт */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    border: 1px solid #4CAF50;
+    transition: background-color 0.3s ease; /* Анімація фону */
+}
+
+.sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Світліший фон при наведенні */
+}
+
+.sidebar h3 {
+    text-align: center;
+    color: #4CAF50; /* Яскравий зелений для заголовка */
+    margin-bottom: 20px;
+    font-size: 24px; 
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    border-bottom: 2px solid #4CAF50; /* Лінія під заголовком */
+    padding-bottom: 10px; /* Внутрішній відступ */
+}
+
+/* Кнопки сайдбару */
+.sidebar button {
+    padding: 15px;
+    border: none;
+    background-color: #4CAF50; /* Яскравий зелений для кнопок */
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 20px; 
+    display: flex;
+    align-items: center; /* Вирівнює текст і іконку по вертикалі */
+    width: 100%; /* Займає всю ширину сайдбару */
+}
+
+/* Іконки для кнопок */
+.sidebar button i {
+    margin-right: 8px; /* Відстань між іконкою та текстом */
+}
+
+/* Кнопки при наведенні */
+.sidebar button:hover {
+    background-color: #388E3C; /* Темніший зелений при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+
+/* Список середнього слухання */
+.sidebar .average-listens {
+    display: flex;
+    align-items: center; /* Вирівнює іконку і текст по вертикалі */
+    margin-top: 20px; /* Відстань від заголовка */
+    padding: 10px; /* Додаємо падінги */
+    background-color: #1a1a1a; /* Темний фон для виділення */
+    border-radius: 10px; /* Заокруглені кути */
+    gap: 5px;
+}
+
+/* Текст у середньому слуханні */
+.sidebar .average-listens p {
+    margin: 0; /* Прибираємо відступи */
+    font-weight: bold;
+    color: #e0e0e0; /* Світлий текст */
+    text-decoration: underline; /* Підкреслення */
+}
+
+/* Sidebar Form */
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+/* Select Dropdown */
+.sidebar select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #4CAF50; /* Зелена облямівка */
+    background-color: #333;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Sidebar Duration Text */
+.sidebar .duration p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff; 
+    font-size: 18px;
+    text-align: center;
+    border-top: 1px solid #4CAF50; 
+    padding-top: 10px;
+}
+
+/* Основний контент */
+.main-content {
+    display: flex; /* Додаємо flexbox */
+    flex-wrap: wrap; /* Дозволяємо елементам переноситися на новий ряд */
+    padding: 0 20px ; /* Вирівнюємо елементи на початку */
+    gap: 15px; /* Простір між картками */
+    flex: 1; /* Використовує всю доступну висоту */
+}
+
+.count{
+    margin-top: 10px;
+    padding: 20px;
+    background: #121212;
+    border-radius: 12px;
+}
+/* Картки музики */
+.music-card {
+    
+    border: 1px solid #1976D2;
+    width: 20%; /* Задаємо флекс і ширину для карток */
+    padding: 20px;
+    background: linear-gradient(45deg, #282828, #3b3b3b);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card h3{
+    padding-top: 0;
+    text-align: center;
+    font-size: 25px;
+}
+/* Стиль для контейнера з кнопками редагування та видалення */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Вирівнює кнопки вправо */
+    margin-top: 10px; /* Відстань від вмісту картки */
+}
+
+.edit-btn, .remove-btn {
+    background-color: #004f07; /* Зелений колір */
+    color: #e0e0e0; /* Світлий текст */
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px; /* Відстань між кнопками */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover, .remove-btn:hover {
+    background-color: #005c09; /* Темніший зелений при наведенні */
+}
+
+/* Track Image */
+.track-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Card Hover Effects */
+.music-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Card Titles and Paragraphs */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Вирівнює кнопки по краях */
+    margin-top: 10px; /* Відстань від вмісту картки */
+}
+
+/* Кнопки в картках */
+.music-card button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Займає всю доступну ширину */
+    margin: 0 5px; /* Відстань між кнопками */
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #2196F3; /* Синій */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #1976D2; /* Темніший синій */
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: #F44336; /* Червоний */
+    color: white;
+}
+
+.remove-btn:hover {
+    background-color: #D32F2F; /* Темніший червоний */
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 14px;
+    border-top: 2px solid #4CAF50;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}

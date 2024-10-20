@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Music</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-headphones-alt"></i> Playlist</h1>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">My Tracks</a>
+            <a href="#">Add Track</a>
+        </nav>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search track...">
+            <button id="searchButton"><i class="fa fa-search"></i></button>
+            <button id="clearBtn">Clear</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Track Management</h3>
+            <p>Filter:</p>
+            <select id="sortSelect">
+                <option value="reset">Sort by</option>
+                <option value="popularity">Popularity</option>
+                <option value="duration">Duration</option>
+                <option value="alphabetical">A-Z</option>
+                           
+            </select>
+            <div class="average-listens">
+                <i class="fas fa-chart-line"></i>
+                <p id="averageListens"> Average listens: 0</p>
+            </div>
+            <div class="count">
+                <p>Count total duration</p>          
+                <button id="countBtn">Count</button>
+                <div class="duration">
+                    <p id="totalDuration">Total duration: 0 min</p>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <section class="main-content" id="musicCardsContainer">
+            <!-- <div class="music-card" data-duration="3:40" data-popularity="500">
+                <img src="images/Whatever.jpg" alt="Whatever it takes" class="track-image">
+                <h3>Whatever it takes</h3>
+                <p><strong>Author:</strong> Imagine Dragons</p>
+                <p><strong>Listen count:</strong> 500</p>
+                <p><strong>Duration:</strong> 3:40 min</p>
+            
+                
+                <button class="play-btn"><i class="fa fa-play"></i> Play</button>
+                -->
+                <!-- Контейнер для кнопок Edit і Remove у верхньому правому куті -->
+                <!-- <div class="button-container">
+                    <button class="edit-btn">Edit</button>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div> -->
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Good Music. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

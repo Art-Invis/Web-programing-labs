@@ -27,8 +27,12 @@
             <label for="duration">Duration (MM:SS):</label>
             <input type="text" id="duration" name="duration" value="03:45" pattern="^[0-5]?[0-9]:[0-5][0-9]$" required>
 
+            <label for="listens">Listens:</label>
+            <input type="text" id="listens" name="listens" value="0" required>
+            
             <label for="songUrl">Song URL:</label>
             <input type="url" id="songUrl" name="songUrl" value="http://example.com/existing_song.mp3" required>
+
 
             <button type="submit" class="btn">Save Changes</button>
             <button type="button" class="btn btn-delete" id="deleteSong">Delete Song</button>
@@ -39,6 +43,6 @@
         <p>Music Website © 2024</p>
     </footer>
 
-    <script src="js/edit.js"></script> <!-- JavaScript для валідації та функцій редагування -->
+    <script src="edit.js"></script> <!-- JavaScript для валідації та функцій редагування -->
 </body>
 </html>

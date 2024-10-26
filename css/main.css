@@ -211,7 +211,20 @@ header button:hover {
     margin-top: 10px; /* Відстань від вмісту картки */
 }
 
+.edit-btn, .remove-btn {
+    background-color: #004f07; /* Зелений колір */
+    color: #e0e0e0; /* Світлий текст */
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px; /* Відстань між кнопками */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.edit-btn:hover, .remove-btn:hover {
+    background-color: #005c09; /* Темніший зелений при наведенні */
+}
 
 
 .music-card img{

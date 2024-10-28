@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px;
+  background: linear-gradient(45deg, #031643, #22398d );
+  color: #e0e0e0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative; 
+}
+
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #bfbfbf;
+}
+
+.logo {
+  position: absolute; /* Фіксація логотипу */
+  left: 40px; /* Відступ зліва для вирівнювання */
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  width: 40px;
+}
+.logo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #7cff41, #3388ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo i {
+  color: #24b365;
+  margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .page-title {
+    font-size: 1rem;
+  }
+}

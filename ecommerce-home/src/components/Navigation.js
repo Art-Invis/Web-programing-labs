@@ -1,13 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Navigation.css'; // Підключаємо стилі
 
-const Navigation = () => {
+const Navigation = ({ activePage }) => {
   return (
     <nav className="navigation">
       <ul>
-        <li><a href="/home" className="active">Home</a></li>
-        <li><a href="/catalog">Catalog</a></li>
-        <li><a href="/cart">Cart</a></li>
+        <li>
+          <Link to="/" className={activePage === 'home' ? 'active' : ''}>Home</Link>
+        </li>
+        <li>
+          <Link to="/catalog" className={activePage === 'catalog' ? 'active' : ''}>Catalog</Link>
+        </li>
+        <li>
+          <Link to="/cart" className={activePage === 'cart' ? 'active' : ''}>Cart</Link>
+        </li>
       </ul>
     </nav>
   );

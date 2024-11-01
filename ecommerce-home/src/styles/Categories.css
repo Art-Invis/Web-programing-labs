@@ -75,6 +75,7 @@
   line-height: 1.5;
 }
 
+
 @media (max-width: 768px) {
   .category-cards {
     flex-direction: column;

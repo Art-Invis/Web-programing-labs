@@ -1,33 +1,22 @@
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Рівномірно розподіляємо контент */
   align-items: center;
-  padding: 40px 40px;
+  padding: 5px 40px;
   background: linear-gradient(45deg, #031643, #22398d );
   color: #e0e0e0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  position: relative; 
-}
-
-.page-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #bfbfbf;
 }
 
 .logo {
-  position: absolute; /* Фіксація логотипу */
-  left: 40px; /* Відступ зліва для вирівнювання */
   display: flex;
   align-items: center;
 }
 
-.logo img{
+.logo img {
   width: 40px;
 }
+
 .logo h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
@@ -42,13 +31,36 @@ header {
   margin-right: 12px;
 }
 
+nav {
+  display: flex;
+  gap: 15px; /* Відступ між елементами навігації */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end; /* Вирівнюємо праворуч */
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .logo h1 {
     font-size: 2rem;
+  }
+
+  nav {
+    margin-top: 10px;
   }
 
   .page-title {

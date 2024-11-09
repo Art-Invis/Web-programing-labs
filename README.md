@@ -1,8 +1,6 @@
 # Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 ## Виконав Гада Артем (ІР-23)
 ### Лабораторна робота №9 (Варіант 5)
-Here's a formatted GitHub-ready Markdown version:
-
 **Description:**  
 You’re ready to put the final touches on your project by connecting your frontend pages to interact with your REST API server.
 

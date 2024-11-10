@@ -15,8 +15,8 @@
 }
 /* Основні стилі для картки продукту */
 .product-card {
-  background-color: #1e1e1e; /* Темний фон для музичної тематики */
-  color: #f1f1f1; /* Світлий текст */
+  background-color: #ffffff; /* Темний фон для музичної тематики */
+  color: #000000; /* Світлий текст */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тінь для картки */
   padding: 20px;

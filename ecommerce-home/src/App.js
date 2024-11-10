@@ -38,7 +38,7 @@ function App() {
             <Categories />
           </>
         } />
-        <Route path="/catalog" element={<CatalogPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} resetSearchTerm={resetSearchTerm} />} />
+        <Route path="/catalog/*" element={<CatalogPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} resetSearchTerm={resetSearchTerm} />} />
         <Route path="/item/:id" element={<ItemPage />} />
       </Routes>
       <Footer />

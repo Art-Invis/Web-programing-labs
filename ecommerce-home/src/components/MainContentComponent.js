@@ -18,7 +18,7 @@ const MainContent = () => {
             experiences and unforgettable emotions. From limited-edition vinyl to exclusive artist bundles, 
             explore everything that makes the music world so special!
           </p>
-          <p class="bordered">
+          <p className="bordered">
             Stay ahead of the curve by exploring our hand-picked recommendations, and be the first to know 
             about upcoming live shows and exclusive drops from top performers. Let music be your journey, and 
             our store your trusted companion on this exciting adventure!

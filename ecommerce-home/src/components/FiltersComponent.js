@@ -51,7 +51,7 @@ const FiltersComponent = ({
       </div>
 
       <div className="buttons-container">
-        <button className="apply" onClick={onFilterChange}>Apply</button>
+        {/* <button className="apply" onClick={onFilterChange}>Apply</button> */}
         <button className="cancel" onClick={resetFilters}>Cancel</button>
       </div>
     </div>

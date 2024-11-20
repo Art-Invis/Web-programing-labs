@@ -1,28 +1,47 @@
 # Лабораторні роботи з дисципліни "Вебтехнології та вебдизайн"
 ## Виконав Гада Артем (ІР-23)
-### Лабораторна робота №9 (Варіант 5)
+### Лабораторна робота №10 (Варіант 5)
 **Description:**  
-You’re ready to put the final touches on your project by connecting your frontend pages to interact with your REST API server.
+# Cart Page (Checkout & Success)
+Complete the project by creating the final pages of the cart functionality: **Checkout** and **Success** pages.  
+As a bonus, you will explore a powerful form validation library - **Formik**.
 
-### Project Scope
-- **Variants:** Use the same products you selected in previous works. (Refer to the description in the 3rd assignment).
-- **Backend:** Use the same backend as your previous projects (works 3-5) or create a new one from scratch. The choice of tech stack is up to you.
+## Variants
+Use the same products as in previous works. Refer to the description from the 3rd project for details.
 
-### Requirements
-#### 1. Maintain Previous Requirements
-All previous requirements for your React.js assignments should still apply.
-#### 2. Code Style
-- **HTTP Requests:** Use the [axios library](https://github.com/axios/axios#installing) for any HTTP requests.
-- **API Structure:** All API functions should be organized in a separate file (or folder, if preferred), similar to the Live Coding example in Lab 5 using the `fetch()` function.
-#### 3. Functionality
-- **Catalog Page:**  
-  - Fetch all items from your backend with a **GET request** (use axios).
-- **Search with Filters:**  
-  - Implement search with filters using a **GET request**.
-  - Pass filters as URL parameters.
-  - Note: The search by text field can remain as is.
-- **Loading State:**  
-  - Display a **Spinner (Loader component)** to the user while waiting for a response from your GET request. You may refer to this [CSS loader example](https://projects.lukehaas.me/css-loaders/).
+---
+## Requirements
 
+### General
+- All requirements from previous React.js projects must be followed.
+
+### Functionality
+1. **Form Requirements**:
+   - The form must include at least **5 fields**.
+   - Each field must have a **validation rule**:
+     - Example: max length, no special characters, only numbers.
+     - **Note:** The "required" rule alone is not sufficient.
+   - Use at least:
+     - One field with **RegEx-based validation**.
+     - One field that **does not require a string value** (e.g., phone number).
+
+2. **Error Handling**:
+   - Display clear, descriptive error messages for all fields.
+     - Example: "Email is incorrect", "First name is a required field".
+   - Error messages must be implemented as a **separate React component**.
+
+3. **Form Submission**:
+   - Upon successful form submission, redirect the user to the **Success page**.
+
+### Code Style
+- Use **Formik** and **Yup** libraries or any similar libraries for:
+  - Form validation.
+  - Displaying error messages.
+  - Handling form submission.
+
+---
+
+## Resources
+- Recommended tutorial: [Formik Basics](https://youtu.be/3sXYK60T6Us?t=390)
 
 

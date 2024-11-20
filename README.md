@@ -2,44 +2,43 @@
 ## Виконав Гада Артем (ІР-23)
 ### Лабораторна робота №10 (Варіант 5)
 **Description:**  
-# Cart Page (Checkout & Success)
-Complete the project by creating the final pages of the cart functionality: **Checkout** and **Success** pages.  
-As a bonus, you will explore a powerful form validation library - **Formik**.
+# React.js: Redux - Cart Page (Shopping Cart)
 
-## Variants
-Use the same products as in previous works. Refer to the description from the 3rd project for details.
+## Description
+You are on your way to finishing this insane project! Create the first of three cart pages: **Shopping Cart**.  
+Additionally, you will learn one of the most popular React libraries - **Redux**.
+
+### Variants
+The products you are "selling" should be the same as in previous works. (See the description of the 3rd work for reference.)
 
 ---
+
 ## Requirements
 
 ### General
-- All requirements from previous React.js projects must be followed.
+- All requirements from previous **React.js** works should be preserved.
 
 ### Functionality
-1. **Form Requirements**:
-   - The form must include at least **5 fields**.
-   - Each field must have a **validation rule**:
-     - Example: max length, no special characters, only numbers.
-     - **Note:** The "required" rule alone is not sufficient.
-   - Use at least:
-     - One field with **RegEx-based validation**.
-     - One field that **does not require a string value** (e.g., phone number).
-
-2. **Error Handling**:
-   - Display clear, descriptive error messages for all fields.
-     - Example: "Email is incorrect", "First name is a required field".
-   - Error messages must be implemented as a **separate React component**.
-
-3. **Form Submission**:
-   - Upon successful form submission, redirect the user to the **Success page**.
+- **Item Page:**
+  - Implement the "Add to Cart" action using the **Redux flow**.
+  - When you add an item to the cart, it should be stored in the **Redux store**.
+  - On the Cart page, retrieve all items directly from the store.
+- **Cart Page:**
+  - Implement "add" and "remove" actions for items using **Redux actions** and **reducers**.
 
 ### Code Style
-- Use **Formik** and **Yup** libraries or any similar libraries for:
-  - Form validation.
-  - Displaying error messages.
-  - Handling form submission.
+- **Redux Structure:**
+  - Keep all Redux parts in separate and appropriately named files:
+    - `actions.js` for actions.
+    - `reducers.js` for reducers.
+    - `store.js` for the Redux store.
+- **Hooks:**
+  - Use the **`useSelector`** hook to access data from the Redux store (instead of the `connect()` function).
+    - [useSelector Examples](https://react-redux.js.org/api/hooks#useselector-examples)
+  - Use the **`useDispatch`** hook to dispatch actions (instead of the `connect()` function).
+    - [useDispatch Documentation](https://react-redux.js.org/api/hooks#usedispatch)
 
 ---
 
 ## Resources
-- Recommended tutorial: [Formik Basics](https://youtu.be/3sXYK60T6Us?t=390)
+- **Redux API Hooks:** [React-Redux Documentation](https://react-redux.js.org/api/hooks)

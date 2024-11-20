@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db');
 
+
+
+// Отримати всі продукти
 router.get('/items', (req, res) => {
   const { type, search, sort, order } = req.query;
   let query = `SELECT * FROM products`;
@@ -19,51 +22,80 @@ router.get('/items', (req, res) => {
 
   if (sort) {
     const orderDirection = order === 'desc' ? 'DESC' : 'ASC';
-    if (sort === 'price') {
-      query += ` ORDER BY price ${orderDirection}`;
-    } else if (sort === 'alphabet') {
-      query += ` ORDER BY title ${orderDirection}`;
-    } else if (sort === 'releaseDate') {
-      query += ` ORDER BY releaseDate ${orderDirection}`;
-    }
+    query += ` ORDER BY ${sort} ${orderDirection}`;
   }
-
 
   db.all(query, params, (err, rows) => {
     if (err) {
-      res.status(500).json({ error: "Помилка отримання продуктів з бази даних" });
+      res.status(500).json({ error: "Помилка отримання продуктів" });
     } else {
       res.json(rows);
     }
   });
 });
 
+// Отримати продукт за ID разом із варіантами
 router.get('/items/:id', (req, res) => {
   const { id } = req.params;
-  const sql = 'SELECT * FROM products WHERE id = ?';
+  const sql = `SELECT * FROM products WHERE id = ?`;
 
   db.get(sql, [id], (err, row) => {
-      if (err) {
-          return res.status(500).json({ error: err.message });
-      }
-      if (!row) {
-          return res.status(404).json({ error: 'Product not found' });
-      }
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    if (!row) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
 
-      const selectableOptions = getSelectableOptions(row.type);
-      res.json({ ...row, selectableOptions });
+    const variantsSql = `SELECT * FROM product_variants WHERE product_id = ?`;
+    db.all(variantsSql, [id], (err, variants) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json({ ...row, selectableOptions: variants });
+    });
   });
 });
 
-const getSelectableOptions = (type) => {
-  switch (type) {
-    case 'tickets': return [{ label: 'Standard', value: 'standard' }, { label: 'VIP', value: 'vip' }, { label: 'Student', value: 'student' }];
-    case 'merch': return [{ label: 'Small (S)', value: 'small' }, { label: 'Medium (M)', value: 'medium' }, { label: 'Large (L)', value: 'large' }, { label: 'Extra Large (XL)', value: 'xl' }];
-    case 'albums': return [{ label: 'CD', value: 'cd' }, { label: 'Vinyl', value: 'vinyl' }, { label: 'Digital', value: 'digital' }];
-    case 'instruments': return [{ label: 'Acoustic', value: 'acoustic' }, { label: 'Electric', value: 'electric' }];
-    case 'vinyl': return [{ label: 'Standard Edition', value: 'standard' }, { label: 'Collector\'s Edition', value: 'collectors' }];
-    default: return [];
-  }
-};
+module.exports = router;
+
+// Додати товар до кошика
+router.post('/cart', (req, res) => {
+  const { id, selectedOption, quantity } = req.body;
+
+  const sql = `SELECT * FROM product_variants WHERE product_id = ? AND value = ?`;
+  db.get(sql, [id, selectedOption], (err, variant) => {
+    if (err) {
+      return res.status(500).json({ success: false, error: err.message });
+    }
+    if (!variant || variant.quantity < quantity) {
+      return res.status(400).json({
+        success: false,
+        error: `Only ${variant?.quantity || 0} items available for this option.`,
+      });
+    }
+
+    res.json({ success: true, message: "Item added to cart." });
+  });
+});
+
+// Оновити доступну кількість
+router.post('/update-quantity', (req, res) => {
+  const { productId, selectedOption, quantity } = req.body;
+
+  const sql = `
+    UPDATE product_variants
+    SET quantity = quantity - ?
+    WHERE product_id = ? AND value = ?
+  `;
+
+  db.run(sql, [quantity, productId, selectedOption], function (err) {
+    if (err) {
+      return res.status(500).json({ success: false, error: err.message });
+    }
+
+    res.json({ success: true, message: "Quantity updated successfully." });
+  });
+});
 
 module.exports = router;

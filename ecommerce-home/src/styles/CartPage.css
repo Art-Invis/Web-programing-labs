@@ -4,7 +4,11 @@
   background-color: #f9f9f9;
   color: #333;
 }
-
+.cart-page h2{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .cart-summary {
   display: flex;
   justify-content: space-between;
@@ -179,4 +183,22 @@
 
 .remove-button:hover {
   background-color: #c9302c;
+}
+.back-to-catalog-button {
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.back-to-catalog-button {
+  background-color: #0056b3;
+}
+
+.back-to-catalog-button {
+  transform: scale(0.98);
 }

@@ -8,7 +8,8 @@ import Footer from './components/FooterComponent';
 import CatalogPage from './components/CatalogPage';
 import ItemPage from './components/ItemPage';
 import CartPage from './components/CartPage'; // Імпортуємо сторінку кошика
-
+import CheckoutPage from './components/CheckoutPage';
+import SuccessPage from './components/SuccessPage';
 function App() {
   const location = useLocation();
   const cart = useSelector((state) => state.cart); // Доступ до кошика з Redux store
@@ -17,7 +18,9 @@ function App() {
     if (location.pathname.includes("/catalog") || location.pathname.includes("/item")) {
       return "catalog";
     }
-    if (location.pathname === "/cart") return "cart";
+    if (location.pathname === "/cart" || location.pathname === "/checkout" || location.pathname === "/success") {
+      return "cart";  // Keep "Cart" active on both Cart and Checkout pages
+    }
     return "home";
   };
 
@@ -49,6 +52,8 @@ function App() {
         <Route path="/catalog/*" element={<CatalogPage searchTerm={searchTerm} setSearchTerm={setSearchTerm} resetSearchTerm={resetSearchTerm} />} />
         <Route path="/item/:id" element={<ItemPage />} />
         <Route path="/cart" element={<CartPage />} /> {/* Додаємо сторінку кошика */}
+        <Route path="/checkout" element={<CheckoutPage />} /> {/* Додаємо маршрут */}
+        <Route path="/success" element={<SuccessPage />} /> {/* Додаємо сторінку успіху */}
       </Routes>
       <Footer />
     </div>

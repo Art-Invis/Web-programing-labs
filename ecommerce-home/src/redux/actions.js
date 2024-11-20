@@ -6,9 +6,9 @@ export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
-export const SET_ERROR = 'SET_ERROR'; // Додано для встановлення помилок
+export const SET_ERROR = 'SET_ERROR'; 
 
-// Дія для додавання товару в кошик
+
 export const addToCart = (product) => {
   return (dispatch, getState) => {
     const { cart } = getState();
@@ -34,13 +34,12 @@ export const addToCart = (product) => {
   };
 };
 
-// Дія для видалення товару з кошика
+
 export const removeFromCart = (product) => ({
   type: REMOVE_FROM_CART,
   payload: product,
 });
 
-// Дія для оновлення кількості товару в кошику
 export const updateQuantity = (productId, selectedOption, quantity) => {
   return (dispatch, getState) => {
     const { cart } = getState();
@@ -66,7 +65,12 @@ export const updateQuantity = (productId, selectedOption, quantity) => {
   };
 };
 
-// Асинхронна дія для отримання продуктів
+export const clearCart = () => {
+  return {
+    type: 'CLEAR_CART',
+  };
+};
+
 export const fetchProducts = () => {
   return async (dispatch) => {
     dispatch({ type: FETCH_PRODUCTS_REQUEST });
@@ -81,13 +85,12 @@ export const fetchProducts = () => {
   };
 };
 
-// Дія для встановлення помилок
+
 export const setError = (error) => ({
   type: SET_ERROR,
   payload: error,
 });
 
-// Дія для очищення помилок
 export const clearError = () => ({
   type: SET_ERROR,
   payload: null,

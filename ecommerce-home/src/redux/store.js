@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import {thunk} from 'redux-thunk';
 
-// Завантаження кошика з LocalStorage
+
 const loadCartFromLocalStorage = () => {
   try {
     const savedCart = localStorage.getItem('cart');
@@ -13,7 +13,6 @@ const loadCartFromLocalStorage = () => {
   }
 };
 
-// Збереження кошика до LocalStorage
 const saveCartToLocalStorage = (cart) => {
   try {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -22,19 +21,18 @@ const saveCartToLocalStorage = (cart) => {
   }
 };
 
-// Початковий стан
 const initialState = {
   cart: loadCartFromLocalStorage(),
 };
 
-// Створення Redux Store
+
 const store = createStore(
   rootReducer,
   initialState,
   applyMiddleware(thunk)
 );
 
-// Підписка на зміни в Store для оновлення LocalStorage
+
 store.subscribe(() => {
   const { cart } = store.getState();
   saveCartToLocalStorage(cart);

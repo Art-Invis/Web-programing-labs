@@ -15,7 +15,6 @@ const rootReducer = (state = initialState, action) => {
     if (itemExists) {
       const newQuantity = itemExists.quantity + action.payload.quantity;
 
-      // Перевірка кількості перед оновленням
       if (newQuantity > action.payload.availableQuantity) {
         alert(`Неможливо додати більше. Максимальна кількість: ${action.payload.availableQuantity}.`);
         return state;
@@ -73,6 +72,13 @@ const rootReducer = (state = initialState, action) => {
           ),
         };
       
+
+
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: [],
+      };
 
     default:
       return state;

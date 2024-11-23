@@ -1,12 +1,16 @@
-@import"./normalize.min.css";
+@import "./normalize.min.css";
 
-@import"./globals.css";
+@import "./globals.css";
 
-@import"./header.css";
+@import "./header.css";
 
-@import"./hero-and-main.css";
+@import "./hero.css";
 
-@import"./footer.css";
+@import "./main.css";
 
-@import"./prefooter.css";
+@import "./prefooter.css";
+
+@import "./footer.css";
+
+
 

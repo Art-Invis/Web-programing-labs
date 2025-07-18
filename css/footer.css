@@ -1,0 +1,145 @@
+.footer {
+    background-color: #E7ECFF;
+    padding: 20px 0;
+    height: 282px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    width: 1440px;
+}
+
+.footer__date {
+    position: absolute;
+    top: 37px;
+    left: 165px;
+    width: 83px;
+    height: 24px;
+    color: #939EA4;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.footer__title {
+    position: absolute;
+    top: 42px;
+    right: 165px;
+    font-size: 26px;
+    color: #37447E;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.footer__line {
+    width: 1110px;
+    
+    border: 1px solid #CDD1D4;
+    margin-top: 25px;
+}
+
+.footer__button {
+    background-color: #111B47;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 109px;
+    height: 26px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.footer__button:hover {
+    background-color: #0056b3;
+}
+
+.footer__text p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer__links ul {
+    padding: 0;
+    display: flex;
+    gap: 55px;
+    margin: 0 auto;
+}
+
+.footer__links ul li {
+    display: inline-block;
+    margin-top: 22px;
+}
+
+.footer__links ul li a {
+    margin: 0 auto;
+    color: #929ECC;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+    margin-bottom: 26px;
+}
+
+.footer__links ul li a:hover {
+    color: darkblue;
+}
+
+.footer__social {
+    margin: 0 auto;
+    gap: 30px
+}
+
+.footer__social a {
+    display: flex;
+    ;
+    
+}
+
+.footer__social img {
+    width: 16px;
+    height: 16px;
+}
+
+.footer__links ul li a {
+    color: #929ECC;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer__links ul li a:hover {
+    color: darkblue;
+}
+
+.footer__social {
+    display: flex;
+    align-items : center;
+    justify-content: center; 
+    margin-top: 26px;
+}
+
+.footer__social a img {
+    width: 16px;
+    height: 16px;
+}
+
